@@ -1,16 +1,17 @@
 from stanfordcorenlp import StanfordCoreNLP
-langs = ['en']
-lang='en'
+import sys
+langs = [sys.argv[1]]
+lang= sys.argv[1]
 nlp_lang0 = StanfordCoreNLP(r'../stanford-corenlp-full-2018-10-05', lang=langs[0])
 
 data_modes = ['train','test','valid']
 
-basic_input_path = 'path/to/raw-data(before bpe)'
-basic_output_path = 'path/to/output file'
+basic_input_path = sys.argv[2]
+
 
 for mode in data_modes:
-    input_path = basic_input_path + '/' + mode + '.' + lang
-    output_path = basic_output_path + '/' + mode + '.' + lang
+    input_path = basic_input_path + '/' + mode + '.' + lang + ".org"
+    output_path = basic_input_path + '/' + mode + '.' + "phrase" +"."+ lang
     input_file = open(input_path, 'r', encoding='utf-8')
     output_file = open(output_path, 'w', encoding='utf-8')
 

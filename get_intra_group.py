@@ -1,7 +1,8 @@
 import os
 import numpy as np
 import codecs
-root_path = 'path/to/raw/bpe-file'
+import sys
+root_path = sys.argv[1]
 dirs = os.listdir(root_path)
 print(dirs)
 for filename in dirs:

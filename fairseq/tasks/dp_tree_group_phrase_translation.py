@@ -11,8 +11,6 @@ import os
 from fairseq import options, utils
 from fairseq.data import (
     ConcatDataset,
-    DPTreeLanguagePairDataset,
-    DPTreePhraseLanguagePairDataset,
     DPTreePhraseGroupLanguagePairDataset,
     data_utils,
     Dictionary,

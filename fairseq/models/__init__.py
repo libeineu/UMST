@@ -17,7 +17,7 @@ from omegaconf import DictConfig, OmegaConf
 from .composite_encoder import CompositeEncoder
 from .distributed_fairseq_model import DistributedFairseqModel
 from .fairseq_decoder import FairseqDecoder
-from .fairseq_encoder import FairseqEncoder, FairseqPhraseModel
+from .fairseq_encoder import FairseqEncoder, FairseqTreeEncoder1, FairseqPhraseEncoder, FairseqLocalPhraseEncoder
 from .fairseq_incremental_decoder import FairseqIncrementalDecoder
 from .fairseq_model import (
     BaseFairseqModel,
@@ -39,6 +39,8 @@ ARCH_CONFIG_REGISTRY = {}
 
 
 __all__ = [
+    "FairseqLocalPhraseEncoder",
+    "FairseqPhraseEncoder",
     "BaseFairseqModel",
     "CompositeEncoder",
     "DistributedFairseqModel",

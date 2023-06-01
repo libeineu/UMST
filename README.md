@@ -5,7 +5,12 @@ This code is based on Fairseq v0.10.2
 - python version >= 3.6
 ## Prepare Data
 ### Get Intra-group Relation
-In order to get the Intra-group relation, you should first get a raw data file after BPE and run the following script:
+In order to get the Inter-group relation, you should first get a raw data file. And install ```stanfordnlpCoreNLP``` software according to the steps of https://github.com/stanfordnlp/CoreNLP
+Then run the following script:
+```
+bash preprocess_group.sh
+```
+<!-- In order to get the Intra-group relation, you should first get a raw data file after BPE and run the following script:
 ```
 python3 get_intra_group.py
 ```
@@ -17,7 +22,7 @@ Finally, run the following script on the raw data without bpe
 
 ```
 python3 get_inter_group.py
-```
+``` -->
 ## Train
 ### For WMT'14 En-De Task
 ```
@@ -38,7 +43,7 @@ python3 -u train.py data-bin/$data_dir
   --log-interval 100
   --ddp-backend no_c10d
   --seed 1 
-  --phrase
+  --fp16
   --save-dir $save_dir
   --keep-last-epochs 10
 ```
@@ -65,7 +70,7 @@ python3 -u train.py data-bin/$data_dir
   --log-interval 100
   --ddp-backend no_c10d
   --seed 1 
-  --phrase
+  --fp16
   --save-dir $save_dir
   --keep-last-epochs 10
 ```

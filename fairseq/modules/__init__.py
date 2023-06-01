@@ -38,6 +38,7 @@ from .unfold import unfold1d
 from .transformer_layer import TransformerDecoderLayer, TransformerEncoderLayer
 from .vggblock import VGGBlock
 from .bpe_word_fusion_attention import BPEWORDFusionMultiheadAttention
+from .relative_multihead_attention import RelativeMultiheadAttention
 
 __all__ = [
     "AdaptiveInput",
@@ -79,4 +80,5 @@ __all__ = [
     "TransposeLast",
     "VGGBlock",
     "unfold1d",
+    "RelativeMultiheadAttention",
 ]
